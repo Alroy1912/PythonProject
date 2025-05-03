@@ -45,11 +45,11 @@ def dashBoardPage():
     dashBoard.grid()
     taskLabel = Label(dashBoard, text="DashBoard",bg="white",padx=10).grid(row=0, column=0)
     for i,(task,duration) in enumerate(TotalTime.items()):
-        x1 = Label(dashBoard,width=10, text=task, bg="white").grid(row=i, column=0)
-        x2 = Label(dashBoard,width=10, text=str(duration), bg="white").grid(row=i, column=1)
-    homeButton = Button(dashBoard, text="Exit", command=homePage).grid(row =len(TotalTime)+1, column=0,pady=20,padx=20)
-    AddTasksButton = Button(dashBoard, text="AddTasks", command=AddTasksPage).grid(row =len(TotalTime)+1, column=1,pady=20,padx=20)
-    taskButton = Button(dashBoard, text="Tasks", command=taskPage).grid(row =len(TotalTime)+1, column=2,pady=20,padx=20)
+        x1 = Label(dashBoard,width=10, text=task, bg="white").grid(row=i+1, column=0)
+        x2 = Label(dashBoard,width=10, text=str(duration), bg="white").grid(row=i+1, column=1)
+    homeButton = Button(dashBoard, text="Exit", command=homePage).grid(row =len(TotalTime)+2, column=0,pady=20,padx=20)
+    AddTasksButton = Button(dashBoard, text="AddTasks", command=AddTasksPage).grid(row =len(TotalTime)+2, column=1,pady=20,padx=20)
+    taskButton = Button(dashBoard, text="Tasks", command=taskPage).grid(row =len(TotalTime)+2, column=2,pady=20,padx=20)
 
 def addTask():
     task = createTask.get()
